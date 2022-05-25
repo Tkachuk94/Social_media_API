@@ -1,25 +1,26 @@
 {
-  "name": "social-network-api",
+  "name": "social_network_api",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "18. NoSQL Challenge",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tkachuk94/Social-Network-API.git"
+    "url": "git+https://github.com/Tkachuk94/social_network_API.git"
   },
+  "keywords": [],
   "author": "Trent Tkachuk",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tkachuk94/Social-Network-API/issues"
+    "url": "https://github.com/Tkachuk94/social_network_API/issues"
   },
-  "homepage": "https://github.com/Tkachuk94/Social-Network-API#readme",
+  "homepage": "https://github.com/Tkachuk94/social_network_API#readme",
   "dependencies": {
-    "express": "^4.17.2",
-    "moment": "^2.29.1",
-    "mongoose": "^6.2.1"
+    "express": "^4.18.1",
+    "moment": "^2.29.3",
+    "mongoose": "^5.13.14"
   }
 }

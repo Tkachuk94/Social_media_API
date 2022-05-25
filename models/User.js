@@ -1,44 +1,44 @@
 const { Schema, model } = require('mongoose');
-const user_schema = new Schema(
-  {
+const moment = require('moment');
+
+const UserSchema = new Schema({
     username: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
+        type: String,
+        unique: true,
+        required: true,
+        trim: true
     },
     email: {
-      type: String,
-      required: true,
-      unique: true,
-      match: [/.+@.+\..+/, 'A Valid email is required'],
+        type: String,
+        required: true,
+        unique: true,
+        match: [/.+@.+\..+/]
     },
     thoughts: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Thought',
-      },
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }
     ],
     friends: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    ],
-  },
-  {
-    toJSON: {
-      virtuals: true,
-    },
-    id: false,
-  }
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
+},
+    {
+        toJSON: {
+            virtuals: true
+        },
+        id: false
+    }
 );
 
-// Tells users how many friends they have
-user_schema.virtual('friendCount').get(function () {
-  return this.friends.length;
+UserSchema.virtual('friendCount').get(function () {
+    return this.friends.length;
 });
 
-const User = model('User', user_schema);
+const User = model('User', UserSchema);
 
 module.exports = User;
